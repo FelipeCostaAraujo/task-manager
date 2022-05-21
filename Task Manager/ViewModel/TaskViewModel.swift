@@ -16,7 +16,7 @@ class TaskViewModel: ObservableObject {
     @Published var taskTitle: String = ""
     @Published var taskColor: String = "Yellow"
     @Published var taskDeadline: Date = Date()
-    @Published var taskType: String = "Basic"
+    @Published var taskType: String = "Basica"
 }
 
 
