@@ -33,7 +33,7 @@ struct Home:View {
         }
         .overlay(alignment: .bottom) {
             Button{
-                
+                taskModel.openEditTask.toggle()
             } label: {
                 Label{
                     Text("Nova Tarefa")
@@ -59,6 +59,12 @@ struct Home:View {
                 ], startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             }
+        }
+        .fullScreenCover(isPresented: $taskModel.openEditTask) {
+            taskModel.resetTaskData()
+        } content: {
+            AddNewTask()
+                .environmentObject(taskModel)
         }
     }
     
