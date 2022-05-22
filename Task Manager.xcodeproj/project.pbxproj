@@ -19,6 +19,7 @@
 		7C91C80D2838A120004F49C7 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91C80C2838A120004F49C7 /* Home.swift */; };
 		7C91C80F2838A4E2004F49C7 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91C80E2838A4E2004F49C7 /* TaskViewModel.swift */; };
 		7C91C8112838AF0D004F49C7 /* AddNewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91C8102838AF0D004F49C7 /* AddNewTask.swift */; };
+		7C91C8132839CF68004F49C7 /* DynamicFilteredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91C8122839CF68004F49C7 /* DynamicFilteredView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		7C91C80C2838A120004F49C7 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		7C91C80E2838A4E2004F49C7 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		7C91C8102838AF0D004F49C7 /* AddNewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTask.swift; sourceTree = "<group>"; };
+		7C91C8122839CF68004F49C7 /* DynamicFilteredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFilteredView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			children = (
 				7C91C80C2838A120004F49C7 /* Home.swift */,
 				7C91C8102838AF0D004F49C7 /* AddNewTask.swift */,
+				7C91C8122839CF68004F49C7 /* DynamicFilteredView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				7C91C7E528389F8B004F49C7 /* Persistence.swift in Sources */,
 				7C91C80F2838A4E2004F49C7 /* TaskViewModel.swift in Sources */,
 				7C91C7DE28389F8A004F49C7 /* ContentView.swift in Sources */,
+				7C91C8132839CF68004F49C7 /* DynamicFilteredView.swift in Sources */,
 				7C91C80D2838A120004F49C7 /* Home.swift in Sources */,
 				7C91C8112838AF0D004F49C7 /* AddNewTask.swift in Sources */,
 				7C91C7E828389F8B004F49C7 /* Task_Manager.xcdatamodeld in Sources */,
