@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  Task Manager
+
+  Created by Felipe Araujo on 22/05/22.
+  
+*/
+"welcome back" = "Bem vindo novamente";
+"here's update today" = "Atualização de hoje";
+"today" = "Hoje";
+"upcoming" = "Por vir";
+"task done" = "Concluída";
+"failed" = "N/E";
+"basic" = "Básica";
+"urgent" = "Urgente";
+"important" = "Importante";
+"edit task" = "Editar Tarefa";
+"save task" = "Salvar Tarefa";
+"task color" = "Cor da Tarefa";
+"task deadline" = "Deadline";
+"task title" = "Título";
+"task type"= "Tipo da Tarefa";
+"new task" = "Nova Tarefa";
+"no tasks found" = "Nenhuma tarefa encontrada";
+"task manager" = "Gerenciador de Tarefas";
+"CFBundleDisplayName" = "Gerenciador de Tarefas";
+"CFBundleName" = "Gerenciador de Tarefas";

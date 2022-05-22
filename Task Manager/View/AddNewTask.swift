@@ -14,7 +14,7 @@ struct AddNewTask: View {
     @Namespace var animation
     var body: some View {
         VStack(spacing: 12){
-            Text("Editar")
+            Text("edit task")
                 .font(.title3.bold())
                 .frame(maxWidth: .infinity)
                 .overlay(alignment: .leading) {
@@ -41,7 +41,7 @@ struct AddNewTask: View {
                     .opacity(taskModel.editTask == nil ? 0 : 1)
                 }
             VStack(alignment: .leading, spacing: 12) {
-                Text("Cor da Tarefa")
+                Text("task color")
                     .font(.caption)
                     .foregroundColor(.gray)
                 
@@ -74,7 +74,7 @@ struct AddNewTask: View {
                 .padding(.vertical, 10)
             
             VStack(alignment: .leading, spacing: 12) {
-                Text("Deadline")
+                Text("task deadline")
                     .font(.caption)
                     .foregroundColor(.gray)
                 
@@ -96,7 +96,7 @@ struct AddNewTask: View {
             Divider()
             
             VStack(alignment: .leading, spacing: 12) {
-                Text("Titulo")
+                Text("task title")
                     .font(.caption)
                     .foregroundColor(.gray)
                 
@@ -109,14 +109,14 @@ struct AddNewTask: View {
             Divider()
             
             // MARK: Sample Task Types
-            let taskTypes: [String] = ["Basica","Urgente","Importante",]
+            let taskTypes: [String] = ["basic","urgent","important"]
             VStack(alignment: .leading, spacing: 12) {
-                Text("Tipo")
+                Text("task type")
                     .font(.caption)
                     .foregroundColor(.gray)
                 HStack(spacing: 12) {
                     ForEach(taskTypes, id: \.self){ type in
-                        Text(type)
+                        Text(LocalizedStringKey(type))
                             .font(.callout)
                             .padding(.vertical,8)
                             .frame(maxWidth: .infinity)
@@ -149,7 +149,7 @@ struct AddNewTask: View {
                     env.dismiss()
                 }
             } label: {
-                Text("Salvar Tarefa")
+                Text("save task")
                     .font(.callout)
                     .fontWeight(.semibold)
                     .frame(maxWidth: .infinity)

@@ -22,9 +22,9 @@ struct Home:View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack{
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Bem vindo novamente")
+                    Text("welcome back")
                         .font(.callout)
-                    Text("Atualização de hoje")
+                    Text("here's update today")
                         .font(.title2.bold())
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -43,7 +43,7 @@ struct Home:View {
                 taskModel.openEditTask.toggle()
             } label: {
                 Label{
-                    Text("Nova Tarefa")
+                    Text("new task")
                         .font(.callout)
                         .fontWeight(.semibold)
                 } icon: {
@@ -92,7 +92,7 @@ struct Home:View {
     func TaskRowView(task: Task) -> some View{
         VStack(alignment: .leading, spacing: 10) {
             HStack{
-                Text(task.type ?? "")
+                Text(LocalizedStringKey(task.type ?? ""))
                     .font(.callout)
                     .padding(.vertical,5)
                     .padding(.horizontal)
@@ -104,7 +104,7 @@ struct Home:View {
                 Spacer()
                 
                 // MARK: Edit button only for non completed task
-                if !task.isCompleted && taskModel.currentTab != "Fracassado" {
+                if !task.isCompleted && taskModel.currentTab != "failed" {
                     Button{
                         taskModel.editTask = task
                         taskModel.openEditTask = true
@@ -138,7 +138,7 @@ struct Home:View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
-                if !task.isCompleted && taskModel.currentTab != "Fracassado" {
+                if !task.isCompleted && taskModel.currentTab != "failed" {
                     Button{
                         // MARK: Updating core data
                         task.isCompleted.toggle()
@@ -164,10 +164,10 @@ struct Home:View {
     @ViewBuilder
     func CustomSegmentedBar() -> some View{
         // In Case if we Missed the Task
-        let tabs = ["Hoje","Por vir","Concluída", "Fracassado"]
+        let tabs = ["today","upcoming","task done", "failed"]
         HStack(spacing: 10) {
             ForEach(tabs, id: \.self){ tab in
-                Text(tab)
+                Text(LocalizedStringKey(tab))
                     .font(.callout)
                     .fontWeight(.semibold)
                     .scaleEffect(0.9)
@@ -192,6 +192,11 @@ struct Home:View {
 
 struct Home_Previews:PreviewProvider{
     static var previews: some View{
-        ContentView()
+        Group{
+            ContentView()
+            
+            ContentView()
+                .environment(\.locale, .init(identifier: "pt-BR"))
+        }
     }
 }

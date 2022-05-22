@@ -20,7 +20,7 @@ struct DynamicFilteredView<Content: View, T>: View where T: NSManagedObject {
         let calendar = Calendar.current
         var predicate: NSPredicate!
         
-        if currentTab == "Hoje" {
+        if currentTab == "today" {
             let today = calendar.startOfDay(for: Date())
             let tommorow = calendar.date(byAdding: .day,value: 1, to: today)!
             
@@ -28,7 +28,7 @@ struct DynamicFilteredView<Content: View, T>: View where T: NSManagedObject {
             
             predicate = NSPredicate(format: "\(filterKey) >= %@ AND \(filterKey) < %@ AND isCompleted == %i", argumentArray: [today, tommorow, 0])
             
-        }else if currentTab == "Por vir" {
+        }else if currentTab == "upcoming" {
             
             let today = calendar.startOfDay(for: calendar.date(byAdding: .day,value: 1, to: Date())!)
             let tommorow = Date.distantFuture
@@ -37,7 +37,7 @@ struct DynamicFilteredView<Content: View, T>: View where T: NSManagedObject {
             
             predicate = NSPredicate(format: "\(filterKey) >= %@ AND \(filterKey) < %@ AND isCompleted == %i", argumentArray: [today, tommorow, 0])
             
-        } else if currentTab == "Fracassado" {
+        } else if currentTab == "failed" {
             let today = calendar.startOfDay(for: Date())
             let past = Date.distantPast
             
@@ -59,7 +59,7 @@ struct DynamicFilteredView<Content: View, T>: View where T: NSManagedObject {
     var body: some View {
         Group{
             if request.isEmpty{
-                Text("Nenhuma tarefa encontrada")
+                Text("no tasks found")
                     .font(.system(size: 16))
                     .fontWeight(.light)
                     .offset(y: 100)

@@ -9,14 +9,14 @@ import SwiftUI
 import CoreData
 
 class TaskViewModel: ObservableObject {
-    @Published var currentTab: String = "Hoje"
+    @Published var currentTab: String = "today"
     
     // MARK: New task Properties
     @Published var openEditTask: Bool = false
     @Published var taskTitle: String = ""
     @Published var taskColor: String = "Yellow"
     @Published var taskDeadline: Date = Date()
-    @Published var taskType: String = "Basica"
+    @Published var taskType: String = "basic"
     @Published var showDatePicker: Bool = false
     
     // MARK: Editing existing task data
@@ -45,7 +45,7 @@ class TaskViewModel: ObservableObject {
     
     // MARK: Resetting Data
     func resetTaskData(){
-        taskType = "Basica"
+        taskType = "basic"
         taskColor = "Yellow"
         taskTitle = ""
         taskDeadline = Date()
@@ -54,7 +54,7 @@ class TaskViewModel: ObservableObject {
     // MARK: If edit task is available then setting exisiting data
     func setupTask(){
         if let editTask = editTask{
-            taskType = editTask.type ?? "Basica"
+            taskType = editTask.type ?? "basic"
             taskColor = editTask.color ?? "Yellow"
             taskTitle = editTask.title ?? ""
             taskDeadline = editTask.deadline ?? Date()

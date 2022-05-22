@@ -12,7 +12,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             Home()
-                .navigationTitle("Task Manager")
+                .navigationTitle("task manager")
                 .navigationBarTitleDisplayMode(.inline)
         }
     }
