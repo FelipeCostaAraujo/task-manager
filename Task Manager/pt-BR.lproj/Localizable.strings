@@ -25,3 +25,4 @@
 "task manager" = "Gerenciador de Tarefas";
 "CFBundleDisplayName" = "Gerenciador de Tarefas";
 "CFBundleName" = "Gerenciador de Tarefas";
+"task" = "Tarefa";

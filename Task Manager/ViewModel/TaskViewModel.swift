@@ -9,6 +9,40 @@ import SwiftUI
 import CoreData
 
 class TaskViewModel: ObservableObject {
+    private let center = UNUserNotificationCenter.current()
+    
+    init(){
+        self.center.getNotificationSettings { settings in
+            switch settings.authorizationStatus {
+                
+            case .notDetermined:
+                self.center.requestAuthorization(options: [.sound,.alert,.carPlay,.badge]) { authorized, error in
+                    print("O usuario autorizou?\(authorized)")
+                }
+            case .denied:
+                print("denied")
+            case .authorized:
+                print("authorized")
+            case .provisional:
+                print("provisional")
+            case .ephemeral:
+                print("ephemeral")
+            @unknown default:
+                print("@unknown")
+            }
+        }
+        
+        self.center.requestAuthorization(options: [.sound,.alert,.carPlay,.badge]) { authorized, error in
+            print("O usuario autorizou? \(authorized)")
+        }
+        
+        let confirmAction = UNNotificationAction(identifier: NotificationIdentifier.confirm, title: "Já estudei 👍🏻", options: [.foreground])
+        let cancelAction = UNNotificationAction(identifier: NotificationIdentifier.cancel, title: "Cancelar", options: [.foreground])
+        let category = UNNotificationCategory(identifier: NotificationIdentifier.category, actions: [confirmAction,cancelAction], intentIdentifiers: [])
+        
+        center.setNotificationCategories([category])
+    }
+    
     @Published var currentTab: String = "today"
     
     // MARK: New task Properties
@@ -38,6 +72,7 @@ class TaskViewModel: ObservableObject {
         task.isCompleted = false
         
         if let _ = try? context.save(){
+            createNotification(task)
             return true
         }
         return false
@@ -60,6 +95,30 @@ class TaskViewModel: ObservableObject {
             taskDeadline = editTask.deadline ?? Date()
         }
     }
+    
+    func createNotification(_ task: Task) {
+        let content = UNMutableNotificationContent()
+        content.title = task.type?.localizedCapitalized ?? ""
+        content.subtitle = task.title ?? ""
+        content.body = task.deadline!.formatted(date: .abbreviated,time: .omitted) + ", " + task.deadline!.formatted(date: .omitted,time: .shortened)
+        content.categoryIdentifier = NotificationIdentifier.category
+        
+        let calendar = Calendar.current
+            let trigger = UNCalendarNotificationTrigger(dateMatching: calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: taskDeadline), repeats: false)
+            
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request) { error in
+                if let error = error {
+                    print(error)
+                }
+            }
+    }
 }
 
-
+class NotificationIdentifier {
+    static let confirm: String = "Confirm"
+    static let cancel: String = "Cancel"
+    static let category: String = "Category"
+    static let confirmation: String = "Confirmation"
+}

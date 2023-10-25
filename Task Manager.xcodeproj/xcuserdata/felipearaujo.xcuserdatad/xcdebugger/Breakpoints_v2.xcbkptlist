@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "A36E26E2-7E50-412E-A16A-89A55BEC28E6"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C4A4D82-855F-4909-91E2-6D60E00B8E12"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Task Manager/ViewModel/TaskViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "createNotification(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7C4A4D82-855F-4909-91E2-6D60E00B8E12 - 1da9e6669dffbcbb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Task_Manager.TaskViewModel.createNotification(Task_Manager.Task) -&gt; ()"
+                  moduleName = "Task Manager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipearaujo/Developer/Projetos%20Swift/Task%20Manager/Task%20Manager/ViewModel/TaskViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "539">
+               </Location>
+               <Location
+                  uuid = "7C4A4D82-855F-4909-91E2-6D60E00B8E12 - 1da9e6669dffbcbb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Task_Manager.TaskViewModel.createNotification(Task_Manager.Task) -&gt; ()"
+                  moduleName = "Task Manager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipearaujo/Developer/Projetos%20Swift/Task%20Manager/Task%20Manager/ViewModel/TaskViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "908">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
