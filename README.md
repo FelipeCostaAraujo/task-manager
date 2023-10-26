@@ -16,11 +16,9 @@ O "Task Manager App" é uma aplicação desenvolvida para auxiliar os usuários 
 
 ## Screenshots
 
-![Edit Task](./.github/images/edit_task.png)
-_Edit Task Screen_
-
-![Home Empty](./.github/images/home_empty.png)
-_Home Empty Screen_
+|       Edit Task       |     Home Empty     |
+|:---------------------:|:------------------:|
+| <img src="./.github/images/edit_task.png" width=40%> | <img src="./.github/images/home_empty.png" width=40%> |
 
 ## Instruções de Uso
 
