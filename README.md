@@ -1,7 +1,3 @@
-Baseado nas imagens que você forneceu, que parecem ser de um aplicativo de gerenciamento de tarefas, aqui está uma sugestão de como poderia ser o README para o seu projeto:
-
----
-
 # Task Manager App
 
 ## Descrição
@@ -34,7 +30,3 @@ O "Task Manager App" é uma aplicação desenvolvida para auxiliar os usuários 
 ## Conclusão
 
 O "Task Manager App" é uma ferramenta indispensável para quem busca organizar suas atividades diárias e aumentar sua produtividade. Com ele, você nunca mais vai esquecer de uma tarefa importante ou perder prazos.
-
----
-
-Espero que este modelo de README ajude na apresentação do seu projeto! Se precisar de mais informações ou ajustes, estou à disposição para ajudar.
